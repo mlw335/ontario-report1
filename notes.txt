@@ -1,5 +1,4 @@
 
-
 We plotted temperature and cell abundance. 
 - each line represents a sample
-
+- environmental groups shown by color
