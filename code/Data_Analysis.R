@@ -15,4 +15,26 @@ sample_data %>%
   #calculate mean cells-ml
   summarise(avg_cells = mean(cells_per_ml))
 
+#Filter command:subsets data by rows on some value
+sample_data %>% 
+  #subset samples only from DEEP
+  filter(env_group == "Deep") %>%
+  #Calculate mean cell abundances
+  summarise(avg_cells = mean(cells_per_ml))
 
+#create a new column using mutate()
+sample_data %>%
+  #calculate new column w/ Total N : Total P ratio
+  mutate(tn_tp_ratio = total_nitrogen / total_phosphorus) %>%
+  #visualize data 
+  view()
+
+#subset by entire columns using select()
+sample_data %>%
+  #pick specific columns
+  select(sample_id, depth) 
+  # select(sample_id:depth)
+  # select(-sample_id)
+
+# cleaning up data
+read_csv()
